@@ -1,7 +1,7 @@
 # DensePose-Paddle
 A reproduction of DensePose by PaddlePaddle
-1. 首先复现detectron2，并没有使用facebook的代码，而是https://github.com/MILVLG/bottom-up-attention.pytorch
-2. ## Training
+## 1. 首先复现detectron2，并没有使用facebook的代码，而是https://github.com/MILVLG/bottom-up-attention.pytorch
+## 2. 训练
 
 首先准备数据集 [dataset](http://densepose.org/#dataset) 格式如下:
 <pre>
@@ -13,19 +13,7 @@ datasets/coco/
     # image files that are mentioned in the corresponding json
 </pre>
 
-使用 [train_net.py](../train_net.py) script，来自官方的例子：
-This script was used to train all DensePose models in [Model Zoo](MODEL_ZOO.md).
-For example, to launch end-to-end DensePose-RCNN training with ResNet-50 FPN backbone
-on 8 GPUs following the s1x schedule, one can run
-```bash
-python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml --num-gpus 8
-```
-The configs are made for 8-GPU training. To train on 1 GPU, one can apply the
-[linear learning rate scaling rule](https://arxiv.org/abs/1706.02677):
-```bash
-python train_net.py --config-file configs/densepose_rcnn_R_50_FPN_s1x.yaml \
-    SOLVER.IMS_PER_BATCH 2 SOLVER.BASE_LR 0.0025
-```
+训练过程先略去
 
 3. 测试图片（运行代码和facebook的detectron2_0.6版本有些不同）
 （1） Show bounding box and segmentation:
