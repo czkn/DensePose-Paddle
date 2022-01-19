@@ -1,6 +1,9 @@
 # DensePose-Paddle
 A reproduction of DensePose by PaddlePaddle
-## 1. 首先复现detectron2，并没有使用facebook的代码，而是https://github.com/MILVLG/bottom-up-attention.pytorch
+## 1. 首先复现detectron2
+
+并没有使用facebook的代码，而是https://github.com/MILVLG/bottom-up-attention.pytorch
+
 ## 2. 训练
 
 首先准备数据集 [dataset](http://densepose.org/#dataset) 格式如下:
@@ -15,7 +18,8 @@ datasets/coco/
 
 训练过程先略去
 
-3. 测试图片（运行代码和facebook的detectron2_0.6版本有些不同）
+## 3. 测试图片
+（运行代码和facebook的detectron2_0.6版本有些不同）
 （1） Show bounding box and segmentation:
 ```bash
 python apply_net.py show configs/densepose_rcnn_R_50_FPN_s1x.yaml model_final_162be9.pkl 1.jpg dp_segm,bbox --output 1_segm.png
